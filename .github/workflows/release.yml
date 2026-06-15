@@ -1,0 +1,38 @@
+name: Release
+
+# prompt-optimizer is distributed as a Claude Code plugin (installed from this repo
+# via the marketplace), not an npm package — so a release is simply a validated,
+# tagged GitHub Release. Users get the new version on their next `/plugin` update.
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # create the GitHub Release
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+
+      - name: Validate plugin before releasing
+        run: bash scripts/validate-plugin.sh
+
+      - name: Tag matches manifest version
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          ver="$(jq -r '.version' .claude-plugin/plugin.json)"
+          [ "$tag" = "$ver" ] || { echo "tag v$tag != plugin.json version $ver" >&2; exit 1; }
+
+      - name: GitHub Release
+        uses: softprops/action-gh-release@b4309332981a82ec1c5618f44dd2e27cc8bfbfda # v3.0.0
+        with:
+          generate_release_notes: true

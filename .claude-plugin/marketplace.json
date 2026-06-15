@@ -1,0 +1,28 @@
+{
+  "name": "prompt-optimizer",
+  "owner": {
+    "name": "Daniel Kremen"
+  },
+  "description": "A slash command that rewrites your request into an optimized prompt, then carries it out.",
+  "plugins": [
+    {
+      "name": "prompt-optimizer",
+      "source": "./",
+      "version": "0.1.0",
+      "license": "MIT",
+      "description": "Ships the /p (prompt-optimizer:p) command — rewrite any request into a reasoning-maximizing prompt (structured context, specificity, meta-instructions for extended thinking, skip-comments for quoted text), then immediately execute it.",
+      "category": "developer-tools",
+      "tags": [
+        "prompt-engineering",
+        "prompt-optimizer",
+        "meta-prompting",
+        "extended-thinking",
+        "reasoning",
+        "slash-command",
+        "productivity",
+        "ai",
+        "llm"
+      ]
+    }
+  ]
+}

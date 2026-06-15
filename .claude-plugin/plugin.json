@@ -1,0 +1,25 @@
+{
+  "name": "prompt-optimizer",
+  "version": "0.1.0",
+  "description": "A Claude Code slash command that rewrites your request into an optimized, reasoning-maximizing prompt — then immediately carries it out. Ships the /p (prompt-optimizer:p) command: structured context, specificity, meta-instructions for extended thinking, and skip-comments that preserve any text inside double quotes.",
+  "author": {
+    "name": "Daniel Kremen"
+  },
+  "homepage": "https://github.com/danielkremen818/prompt-optimizer#readme",
+  "repository": "https://github.com/danielkremen818/prompt-optimizer",
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "claude-code-plugin",
+    "prompt-engineering",
+    "prompt-optimizer",
+    "meta-prompting",
+    "extended-thinking",
+    "reasoning",
+    "slash-command",
+    "developer-tools",
+    "productivity",
+    "ai",
+    "llm"
+  ]
+}

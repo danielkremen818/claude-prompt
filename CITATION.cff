@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+title: prompt-optimizer
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Daniel
+    family-names: Kremen
+    alias: danielkremen818
+repository-code: "https://github.com/danielkremen818/prompt-optimizer"
+url: "https://github.com/danielkremen818/prompt-optimizer#readme"
+abstract: >-
+  A Claude Code slash command (/p) that rewrites a request into an optimized,
+  reasoning-maximizing prompt — applying structured context, specificity,
+  meta-instructions for extended thinking, and skip-comments that preserve quoted
+  text — then immediately carries the optimized prompt out.
+keywords:
+  - claude-code
+  - claude-code-plugin
+  - prompt-engineering
+  - meta-prompting
+  - extended-thinking
+license: MIT
+version: 0.1.0
+date-released: "2026-06-16"

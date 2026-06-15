@@ -1,0 +1,12 @@
+prompt-optimizer
+Copyright (c) 2026 Daniel Kremen
+
+This project is an original work, released under the MIT License (see LICENSE).
+
+It packages a "rewrite-then-execute" prompt-optimization command as a Claude Code
+plugin. The repository structure, governance, and security scaffolding follow the
+conventions established in the author's `ultracost` project
+(https://github.com/danielkremen818/ultracost); no code was copied from it.
+
+The diagram toolkit in scripts/svgkit.py renders Feather-style icon glyphs
+(https://feathericons.com, MIT License) as inline SVG paths.

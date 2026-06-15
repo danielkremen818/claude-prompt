@@ -1,0 +1,41 @@
+name: Bug report
+description: Report a defect in the prompt-optimizer plugin or its /p command
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Please do **not** include secrets or private file
+        contents. For a suspected security issue, use the Security tab →
+        "Report a vulnerability" instead of this form.
+  - type: input
+    id: version
+    attributes:
+      label: prompt-optimizer version
+      description: The installed plugin version (see `.claude-plugin/plugin.json`).
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: client
+    attributes:
+      label: Claude Code version / client
+      description: Output of `claude --version`, and whether CLI, desktop, web, or IDE.
+      placeholder: "claude-code x.y.z, CLI"
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you expect `/p` to do, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: The exact `/p <request>` you ran (redact anything private).
+      render: shell
+    validations:
+      required: true

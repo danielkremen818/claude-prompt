@@ -1,0 +1,11 @@
+.DS_Store
+*.log
+.env
+.env.*
+
+# Python bytecode (scripts/svgkit.py is imported by the SVG generator)
+__pycache__/
+*.pyc
+
+# graphify export cache — generated locally, never committed
+graphify-out/

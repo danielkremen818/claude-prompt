@@ -1,0 +1,10 @@
+version: 2
+updates:
+  # Keep the GitHub Actions used by CI / CodeQL / Scorecard / release workflows up to
+  # date (and their SHA pins bumped). There is intentionally NO package ecosystem
+  # entry: prompt-optimizer is a command-only plugin with zero code dependencies, so
+  # there is nothing else for Dependabot to update.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
