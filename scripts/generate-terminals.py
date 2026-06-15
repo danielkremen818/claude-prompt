@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Render polished "mac-window" terminal SVGs of a /p session for the README.
+Render polished "mac-window" terminal SVGs of a /claude-prompt:p session for the README.
 
 claude-prompt has no CLI to capture (the product is a prompt, not a program), so the
-panels below are authored content — a faithful mock of what a `/p` run looks like in
+panels below are authored content — a faithful mock of what a `/claude-prompt:p` run looks like in
 Claude Code. The window chrome (gradient frame, traffic lights, titlebar, glow) mirrors
 the terminal images in the author's ultracost project, retinted to the warm clay/amber
 brand used by assets/architecture.svg.
@@ -130,7 +130,7 @@ def build_svg(title: str, lines: list[list[dict]]) -> str:
 # ── panels ────────────────────────────────────────────────────────────────────
 def demo_panel() -> list[list[dict]]:
     return [
-        [r("> ", GREEN, bold=True), r("/p add rate limiting to the login endpoint", GOLD)],
+        [r("> ", GREEN, bold=True), r("/claude-prompt:p add rate limiting to the login endpoint", GOLD)],
         [],
         [r("Optimized prompt:", GOLD, bold=True)],
         [r("Add rate limiting to the ", ), r("POST /login", CYAN), r(" endpoint.")],
@@ -149,7 +149,7 @@ def demo_panel() -> list[list[dict]]:
 
 def skip_comments_panel() -> list[list[dict]]:
     return [
-        [r("> ", GREEN, bold=True), r('/p rename the CTA to ', GOLD),
+        [r("> ", GREEN, bold=True), r('/claude-prompt:p rename the CTA to ', GOLD),
          r('"Get started — it’s free"', PINK), r(" everywhere", GOLD)],
         [],
         [r("Optimized prompt:", GOLD, bold=True)],
@@ -168,8 +168,8 @@ def skip_comments_panel() -> list[list[dict]]:
 def main() -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     panels = [
-        ("term-demo.svg", "claude — /p prompt optimizer", demo_panel()),
-        ("term-skip-comments.svg", "claude — /p skip-comments", skip_comments_panel()),
+        ("term-demo.svg", "claude — /claude-prompt:p prompt optimizer", demo_panel()),
+        ("term-skip-comments.svg", "claude — /claude-prompt:p skip-comments", skip_comments_panel()),
     ]
     for fname, title, lines in panels:
         out = OUT_DIR / fname
