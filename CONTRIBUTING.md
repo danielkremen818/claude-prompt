@@ -30,10 +30,11 @@ That checks the manifests are valid JSON, the two version strings agree, the com
 file is well-formed, and **no private data has leaked** into a tracked file. CI runs
 exactly this script; a PR that breaks it won't be merged.
 
-If you change the command flow, regenerate the diagram and commit it:
+If you change the command flow, regenerate the images and commit them:
 
 ```bash
 python3 scripts/generate-architecture-svg.py   # writes assets/architecture.svg
+python3 scripts/generate-terminals.py          # writes assets/term-*.svg (README screenshots)
 ```
 
 ## Trying it locally

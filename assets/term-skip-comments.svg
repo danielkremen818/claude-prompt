@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="516" height="258" viewBox="0 0 516 258" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" role="img" aria-label="prompt-optimizer terminal: claude — /p skip-comments">
+<defs><linearGradient id="frame" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d97757"/><stop offset="55%" stop-color="#fbbf24"/><stop offset="100%" stop-color="#f4b860"/></linearGradient><radialGradient id="glow" cx="22%" cy="0%" r="90%"><stop offset="0%" stop-color="#d97757" stop-opacity="0.16"/><stop offset="60%" stop-color="#d97757" stop-opacity="0"/></radialGradient><clipPath id="screen"><rect x="1.5" y="1.5" width="513" height="255" rx="11"/></clipPath></defs>
+<rect x="1" y="1" width="514" height="256" rx="11.5" fill="#100a07" stroke="url(#frame)" stroke-width="1.5"/>
+<g clip-path="url(#screen)">
+<rect x="0" y="0" width="516" height="258" fill="url(#glow)"/>
+<rect x="1.5" y="1.5" width="513" height="36" rx="11" fill="#1c1410"/>
+<rect x="1.5" y="28" width="513" height="10" fill="#1c1410"/>
+<line x1="0" y1="37.5" x2="516" y2="37.5" stroke="#000" stroke-opacity="0.35"/>
+<circle cx="24" cy="19.0" r="5.5" fill="#fb7185"/>
+<circle cx="44" cy="19.0" r="5.5" fill="#fbbf24"/>
+<circle cx="64" cy="19.0" r="5.5" fill="#34d399"/>
+<text x="258.0" y="23.0" text-anchor="middle" font-size="11" fill="#c4a78f" letter-spacing="0.04em">claude — /p skip-comments</text>
+<text font-size="13" xml:space="preserve">
+<tspan x="22" y="65"><tspan fill="#34d399" font-weight="700">&gt; </tspan><tspan fill="#f4b860">/p rename the CTA to </tspan><tspan fill="#f472b6">&quot;Get started — it’s free&quot;</tspan><tspan fill="#f4b860"> everywhere</tspan></tspan>
+<tspan x="22" y="84"> </tspan>
+<tspan x="22" y="103"><tspan fill="#f4b860" font-weight="700">Optimized prompt:</tspan></tspan>
+<tspan x="22" y="122"><tspan fill="#e7d8c9">Replace the call-to-action label across the app.</tspan></tspan>
+<tspan x="22" y="141"><tspan fill="#d97757">• </tspan><tspan fill="#e7d8c9">Find every render of the CTA (button, hero, nav).</tspan></tspan>
+<tspan x="22" y="160"><tspan fill="#d97757">• </tspan><tspan fill="#e7d8c9">Set the label to exactly </tspan><tspan fill="#f472b6">&quot;Get started — it’s free&quot;</tspan><tspan fill="#e7d8c9">.</tspan></tspan>
+<tspan x="22" y="179"><tspan fill="#d97757">• </tspan><tspan fill="#e7d8c9">Leave behavior and styling untouched.</tspan></tspan>
+<tspan x="22" y="198"> </tspan>
+<tspan x="22" y="217"><tspan fill="#2dd4bf" font-weight="700">skip-comments: </tspan><tspan fill="#e7d8c9" opacity="0.62">the quoted string is preserved verbatim</tspan></tspan>
+<tspan x="22" y="236"><tspan fill="#e7d8c9" opacity="0.62">— em dash, curly apostrophe and all.</tspan></tspan>
+</text></g></svg>
