@@ -17,20 +17,23 @@
 
 ---
 
-Type `/p <your request>` and Claude first **rewrites it into an optimized prompt** —
+Type `/p <your request>` and Claude **reads it, rewrites it into an optimized prompt** —
 adding structure, specificity, and meta-instructions that get more out of extended
-thinking — then **immediately carries that optimized prompt out**. You see the rewrite,
-then you get the work. No extra round-trip.
+thinking — then **carries it out**. You see the rewrite, then you get the work. Clear asks
+run in one shot; only genuinely **ambiguous** asks get a quick clarifying question first,
+and **high-stakes** (destructive/irreversible) asks get a one-line confirm before anything runs.
 
 It applies four techniques:
 
 1. **Structured context** — explicit reasoning frameworks and step-by-step structure.
 2. **Specificity** — vague asks become detailed requirements with clear success criteria.
 3. **Meta-instructions** — guidance that leverages extended thinking and planning.
-4. **Skip-comments** — text inside double quotes (`"like this"`) is preserved verbatim, so
-   exact strings, names, and copy survive the rewrite untouched.
+4. **Skip-comments** — literals are reproduced verbatim: `"double quotes"`, `` `inline code` ``,
+   fenced code blocks, file paths, URLs, regexes, and error strings survive the rewrite untouched.
 
-No code. No dependencies. No network. No hooks. Just one auditable command. MIT.
+It also **types intent** (do a task · answer a question · improve a piece of text) and supports a
+**`--dry`** optimize-only mode. No code. No dependencies. No network. No hooks. Just one
+auditable command. MIT.
 
 ## Install
 
@@ -77,6 +80,15 @@ The optimizer restructures the task but leaves `"Get started — it's free"` byt
 <img src="https://raw.githubusercontent.com/danielkremen818/claude-prompt/main/assets/term-skip-comments.svg" alt="The skip-comments technique preserving a quoted call-to-action string verbatim" width="520">
 </div>
 
+### Just the prompt — `--dry`
+
+Prefix `--dry` to get only the optimized prompt, without executing it — handy when you want to
+copy the rewrite somewhere else or review it first:
+
+```
+/p --dry migrate the test suite from mocha to vitest
+```
+
 ### When to use it
 
 - Vague or one-line asks you want Claude to scope properly before acting.
@@ -87,8 +99,9 @@ For trivial, well-specified requests, skip it — the rewrite step is overhead y
 
 ## How it works
 
-One command file, two manifests, no runtime code. Your request flows through three steps
-— optimize, show, execute — with the four techniques applied during the optimize step:
+One command file, two manifests, no runtime code. Your request flows through **read →
+optimize → show → execute** — a quick Step 0 classifies it (and clarifies/confirms only when
+needed), then the four techniques are applied during the optimize step:
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/danielkremen818/claude-prompt/main/assets/architecture.svg" alt="claude-prompt architecture — install surface, the /p run, the four optimize techniques, and the output" width="900">

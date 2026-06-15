@@ -18,15 +18,22 @@ points at this repo as a plugin. `.claude-plugin/plugin.json` is the manifest, a
 
 **The `/p` run.** When you type `/p <request>`, Claude Code substitutes your text for
 `$ARGUMENTS` in `commands/p.md` and runs the resulting prompt. That prompt puts Claude
-into "PROMPT OPTIMIZER" mode with three steps:
+into "PROMPT OPTIMIZER" mode:
 
+0. **Read** — classify the request silently: the `--dry` flag (optimize-only), the **type**
+   (task · question · improve-this), **clarity**, and **stakes**. Then a gate: ambiguous →
+   ask 1–3 questions; high-stakes/mutating → state the blast radius and confirm; otherwise
+   continue with no round-trip. A data/instruction fence keeps the request's text from
+   overriding these steps.
 1. **Optimize** — rewrite the request into a sharper prompt using four techniques:
    - **Structured context** — explicit reasoning frameworks and step-by-step structure.
    - **Specificity** — vague asks become detailed requirements with success criteria.
    - **Meta-instructions** — guidance that leverages extended thinking and planning.
-   - **Skip-comments** — text inside double quotes (`"like this"`) is preserved verbatim.
-2. **Show** — print the rewrite under an `**Optimized prompt:**` heading so you see it.
-3. **Execute** — immediately carry out the optimized prompt in full.
+   - **Skip-comments** — reproduce literals verbatim: quotes, inline/fenced code, file
+     paths, URLs, regexes, and error strings. Right-sized so a small ask stays small.
+2. **Show** — print the rewrite under an `**Optimized prompt:**` heading. For `--dry` or an
+   improve-this request, this block is the deliverable and the run stops here.
+3. **Execute** — carry out the optimized prompt in full (a task gets done, a question answered).
 
 That's the entire system. The diagram above is the live version (animated in the SVG).
 

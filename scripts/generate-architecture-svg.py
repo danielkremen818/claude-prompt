@@ -80,8 +80,8 @@ def build_svg() -> str:
     P.append('<text x="40" y="50" class="h1">CLAUDE-PROMPT &#183; LIVE ARCHITECTURE</text>')
     P.append(
         '<text x="40" y="76" class="legend">'
-        "One command (commands/p.md) &#8594; rewrite your request with four techniques "
-        "&#8226; show the optimized prompt &#8226; then carry it out &#8226; dots are live (animated)"
+        "One command (commands/p.md) &#8594; read &amp; gate the request &#8226; rewrite with four "
+        "techniques &#8226; show the optimized prompt &#8226; then carry it out &#8226; dots are live"
         "</text>"
     )
 
@@ -107,14 +107,16 @@ def build_svg() -> str:
 
     # The /p run (center column)
     CX = 590
-    P.append(node(cx=CX, cy=200, glyph="user", label="your request", w=240,
-                  sublabel="/p <request> · $ARGUMENTS", accent=INK))
-    P.append(node(cx=CX, cy=370, glyph="edit", label="Step 1 · Optimize", w=240,
+    P.append(node(cx=CX, cy=185, glyph="user", label="your request", w=240,
+                  sublabel="/p [--dry] <request>", accent=INK))
+    P.append(node(cx=CX, cy=315, glyph="filter", label="Step 0 · Read", w=240,
+                  sublabel="type · clarity · stakes", accent=PINK))
+    P.append(node(cx=CX, cy=445, glyph="edit", label="Step 1 · Optimize", w=240,
                   sublabel="rewrite for reasoning", accent=AMBER))
-    P.append(node(cx=CX, cy=540, glyph="eye", label="Step 2 · Show", w=240,
-                  sublabel="Optimized prompt: heading", accent=GOLD))
-    P.append(node(cx=CX, cy=710, glyph="play", label="Step 3 · Execute", w=240,
-                  sublabel="carry it out in full", accent=CLAY))
+    P.append(node(cx=CX, cy=575, glyph="eye", label="Step 2 · Show", w=240,
+                  sublabel="Optimized prompt:", accent=GOLD))
+    P.append(node(cx=CX, cy=705, glyph="play", label="Step 3 · Execute", w=240,
+                  sublabel="clear asks run one-shot", accent=CLAY))
 
     # The four techniques (right-top)
     P.append(node(cx=985, cy=200, glyph="layers", label="structured context", w=270,
@@ -137,25 +139,29 @@ def build_svg() -> str:
     P.append(flow(d="M 190 244 L 190 310", color=SLATE, label="ships", label_pos=(190, 280), dur="2.4s"))
     P.append(flow(d="M 190 384 L 190 450", color=CLAY, label="install", label_pos=(190, 420), dur="2.2s"))
     # install -> /p available (enables the run)
-    P.append(flow(d=curve(300, 470, 470, 205, 0.55), color=AMBER,
+    P.append(flow(d=curve(300, 470, 470, 190, 0.55), color=AMBER,
                   label="enables /p", label_pos=(388, 300), dur="2.8s"))
 
     # center vertical chain
-    P.append(flow(d="M 590 244 L 590 340", color=INK, dur="2.0s"))
-    P.append(flow(d="M 590 414 L 590 510", color=AMBER, label="rewrite", label_pos=(590, 466), dur="2.0s"))
-    P.append(flow(d="M 590 584 L 590 680", color=GOLD, label="then run", label_pos=(590, 636), dur="2.0s"))
+    P.append(flow(d="M 590 229 L 590 285", color=INK, label="read", label_pos=(590, 257), dur="2.0s"))
+    P.append(flow(d="M 590 359 L 590 415", color=PINK, dur="2.0s"))
+    P.append(flow(d="M 590 489 L 590 545", color=AMBER, label="rewrite", label_pos=(590, 517), dur="2.0s"))
+    P.append(flow(d="M 590 619 L 590 675", color=GOLD, label="then run", label_pos=(590, 647), dur="2.0s"))
+    # Step 0 gate — clarify/confirm loops back to the user only when warranted
+    P.append(flow(d="M 470 315 C 432 280, 432 220, 470 185", color=PINK,
+                  label="clarify / confirm", label_pos=(432, 250), dur="2.6s"))
 
     # the four techniques feed Step 1 Optimize (converge on the optimize node, x=710)
-    P.append(flow(d=curve(850, 200, 712, 360, 0.5), color=CYAN, label="applied", label_pos=(792, 268), dur="2.6s"))
-    P.append(flow(d=curve(850, 320, 712, 372, 0.5), color=VIOLET, dur="2.4s"))
-    P.append(flow(d=curve(1165, 210, 716, 366, 0.7), color=TEAL, dur="3.0s"))
-    P.append(flow(d=curve(1165, 330, 716, 378, 0.7), color=PINK, dur="3.2s"))
+    P.append(flow(d=curve(850, 200, 712, 435, 0.5), color=CYAN, label="applied", label_pos=(800, 300), dur="2.6s"))
+    P.append(flow(d=curve(850, 320, 712, 447, 0.5), color=VIOLET, dur="2.4s"))
+    P.append(flow(d=curve(1165, 210, 716, 441, 0.7), color=TEAL, dur="3.0s"))
+    P.append(flow(d=curve(1165, 330, 716, 453, 0.7), color=PINK, dur="3.2s"))
 
     # Step 2 Show -> optimized prompt block
-    P.append(flow(d=curve(710, 540, 850, 558, 0.5), color=GOLD, label="reveal", label_pos=(782, 520), dur="2.2s"))
+    P.append(flow(d=curve(710, 575, 850, 558, 0.5), color=GOLD, label="reveal", label_pos=(782, 552), dur="2.2s"))
     # Step 3 Execute -> the result
-    P.append(flow(d="M 710 710 C 980 710, 1180 660, 1290 600", color=CLAY,
-                  label="carry out", label_pos=(1010, 712), dur="2.8s"))
+    P.append(flow(d="M 710 705 C 980 705, 1180 660, 1290 600", color=CLAY,
+                  label="carry out", label_pos=(1010, 706), dur="2.8s"))
     # optimized prompt -> result (the same optimized prompt is what gets executed)
     P.append(flow(d="M 1120 560 L 1166 560", color=GREEN, dur="2.0s"))
 
@@ -164,6 +170,7 @@ def build_svg() -> str:
     P.append(f'<text x="40" y="{ly}" class="legend-h">FLOW</text>')
     items = [
         (SLATE, "ship / install"),
+        (PINK, "read / gate"),
         (AMBER, "optimize"),
         (CYAN, "techniques applied"),
         (GOLD, "show"),
