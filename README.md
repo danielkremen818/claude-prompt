@@ -10,6 +10,7 @@
 [![dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)](#whats-in-the-box)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-plugin-d97757.svg)](https://code.claude.com/docs/en/plugins)
+[![Listed on ClaudePluginHub](https://www.claudepluginhub.com/badge/danielkremen818-claude-prompt)](https://www.claudepluginhub.com/plugins/danielkremen818-claude-prompt?ref=badge)
 
 <img src="https://raw.githubusercontent.com/danielkremen818/claude-prompt/main/assets/term-demo.svg" alt="A /p session: the typed request, the rewritten Optimized prompt, then Claude executing it" width="560">
 
