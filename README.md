@@ -17,7 +17,7 @@
 
 ---
 
-Type `/p <your request>` and Claude **reads it, rewrites it into an optimized prompt** —
+Type `/claude-prompt:p <your request>` and Claude **reads it, rewrites it into an optimized prompt** —
 adding structure, specificity, and meta-instructions that get more out of extended
 thinking — then **carries it out**. You see the rewrite, then you get the work. Clear asks
 run in one shot; only genuinely **ambiguous** asks get a quick clarifying question first,
@@ -44,8 +44,9 @@ In Claude Code, add the marketplace and install the plugin:
 /plugin install claude-prompt@claude-prompt
 ```
 
-That's it — the `/p` command is now available in your session. To update later, bump
-happens automatically on the next `/plugin` sync once a new version is published.
+That's it — the command is now available as `/claude-prompt:p`. Prefer the shorter `/p`?
+See [Shorten to `/p`](#shorten-to-p) below. To update later, the bump happens automatically
+on the next `/plugin` sync once a new version is published.
 
 > Requires Claude Code with plugin support. See the
 > [official plugin docs](https://code.claude.com/docs/en/plugins) if `/plugin` isn't
@@ -53,11 +54,14 @@ happens automatically on the next `/plugin` sync once a new version is published
 
 ## Usage
 
-Run `/p` followed by whatever you'd normally ask:
+After install, the command is `/claude-prompt:p`. Run it followed by whatever you'd
+normally ask:
 
 ```
-/p add input validation to the signup form
+/claude-prompt:p add input validation to the signup form
 ```
+
+> Prefer the shorter `/p`? Set up the one-line alias in [Shorten to `/p`](#shorten-to-p).
 
 Claude responds in two parts — the rewritten prompt, then the work:
 
@@ -71,7 +75,7 @@ Anything inside double quotes is preserved exactly — labels, copy, identifiers
 error strings:
 
 ```
-/p rename the CTA to "Get started — it's free" everywhere
+/claude-prompt:p rename the CTA to "Get started — it's free" everywhere
 ```
 
 The optimizer restructures the task but leaves `"Get started — it's free"` byte-for-byte:
@@ -86,7 +90,7 @@ Prefix `--dry` to get only the optimized prompt, without executing it — handy 
 copy the rewrite somewhere else or review it first:
 
 ```
-/p --dry migrate the test suite from mocha to vitest
+/claude-prompt:p --dry migrate the test suite from mocha to vitest
 ```
 
 ### When to use it
@@ -96,6 +100,22 @@ copy the rewrite somewhere else or review it first:
 - Anything where a sharper prompt would mean a sharper result.
 
 For trivial, well-specified requests, skip it — the rewrite step is overhead you don't need.
+
+## Shorten to `/p`
+
+Claude Code **namespaces** every plugin command, so a freshly installed plugin answers to
+`/claude-prompt:p` — the bare `/p` is *not* recognized. Personal and project commands aren't
+namespaced, so to type the shorter `/p` you add the command as a personal command:
+
+```bash
+mkdir -p ~/.claude/commands
+cp "$(find ~/.claude/plugins -path '*claude-prompt*/commands/p.md' | head -n1)" \
+   ~/.claude/commands/p.md
+```
+
+Now `/p` works in every session. One caveat: this is a **copy**, not a link, so it won't
+follow plugin updates — re-run the `cp` after each `/plugin` update to stay current. (Prefer
+to always track the plugin? Skip this and keep using `/claude-prompt:p`.)
 
 ## How it works
 
@@ -113,17 +133,18 @@ Full write-up in [`docs/architecture.md`](docs/architecture.md).
 
 | Path | Purpose |
 | --- | --- |
-| `commands/p.md` | The `/p` slash command definition — the whole product. |
+| `commands/p.md` | The `/claude-prompt:p` slash command definition — the whole product. |
 | `.claude-plugin/plugin.json` | Plugin manifest. |
 | `.claude-plugin/marketplace.json` | Marketplace metadata for one-line install. |
 | `scripts/` | The CI validator and the SVG diagram/terminal generators (dev-only). |
 
-The command is invoked as `/p` (or fully qualified, `/claude-prompt:p`).
+The command is invoked as `/claude-prompt:p` (or just `/p` once you add the alias — see
+[Shorten to `/p`](#shorten-to-p)).
 
 ## Security
 
 claude-prompt ships **no code, no dependencies, and no hooks** — it cannot run
-anything on your machine, only add a `/p` command whose body is a prompt. CI pins every
+anything on your machine, only add a `/claude-prompt:p` command whose body is a prompt. CI pins every
 GitHub Action to a commit SHA, runs CodeQL (actions) and OpenSSF Scorecard, and fails
 the build if any tracked file leaks an email, token, or private path. See
 [`SECURITY.md`](SECURITY.md).
