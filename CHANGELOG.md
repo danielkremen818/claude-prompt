@@ -8,8 +8,8 @@ All notable changes to this project are documented here. The format follows
 
 ### Added
 - Initial release.
-- `/p` (`/prompt-optimizer:p`) slash command: rewrite a request into an optimized,
+- `/p` (`/claude-prompt:p`) slash command: rewrite a request into an optimized,
   reasoning-maximizing prompt, then immediately carry it out.
 - Marketplace metadata for one-line install.
 
-[0.1.0]: https://github.com/danielkremen818/prompt-optimizer/releases/tag/v0.1.0
+[0.1.0]: https://github.com/danielkremen818/claude-prompt/releases/tag/v0.1.0

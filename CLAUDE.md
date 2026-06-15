@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-This file guides AI agents (and humans) working **on the prompt-optimizer repository
+This file guides AI agents (and humans) working **on the claude-prompt repository
 itself**.
 
 See [AGENTS.md](AGENTS.md) for the full repo development guidance: the structure map,

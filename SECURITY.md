@@ -2,7 +2,7 @@
 
 ## Supported versions
 
-prompt-optimizer follows [Semantic Versioning](https://semver.org/). Fixes land on
+claude-prompt follows [Semantic Versioning](https://semver.org/). Fixes land on
 the latest minor release line.
 
 | Version | Supported |
@@ -22,7 +22,7 @@ prepared, the advisory is published alongside the patched release.
 
 ## Trust model
 
-prompt-optimizer is one of the smallest things you can install in Claude Code: a
+claude-prompt is one of the smallest things you can install in Claude Code: a
 **single slash-command definition** (`commands/p.md`) plus two JSON manifests. There
 is intentionally very little to vet.
 

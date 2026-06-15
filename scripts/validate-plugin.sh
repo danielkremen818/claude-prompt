@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# validate-plugin.sh — the green-bar invariant for prompt-optimizer.
+# validate-plugin.sh — the green-bar invariant for claude-prompt.
 #
 # This is a command-only Claude Code plugin, so there is no compiled code to test.
 # "Valid" instead means: the manifests parse, their versions agree, the command file
@@ -55,4 +55,4 @@ fi
 rm -f /tmp/leak.$$
 ok "no private data found in tracked files"
 
-echo "PASS: prompt-optimizer plugin is valid."
+echo "PASS: claude-prompt plugin is valid."

@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: prompt-optimizer
+title: claude-prompt
 message: >-
   If you use this software, please cite it using the
   metadata from this file.
@@ -8,8 +8,8 @@ authors:
   - given-names: Daniel
     family-names: Kremen
     alias: danielkremen818
-repository-code: "https://github.com/danielkremen818/prompt-optimizer"
-url: "https://github.com/danielkremen818/prompt-optimizer#readme"
+repository-code: "https://github.com/danielkremen818/claude-prompt"
+url: "https://github.com/danielkremen818/claude-prompt#readme"
 abstract: >-
   A Claude Code slash command (/p) that rewrites a request into an optimized,
   reasoning-maximizing prompt — applying structured context, specificity,

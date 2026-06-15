@@ -8,7 +8,7 @@
 - [ ] Bumped `version` in **both** `.claude-plugin/plugin.json` and `marketplace.json` (if user-facing)
 - [ ] `CHANGELOG.md` updated under `## [Unreleased]` (if user-facing)
 - [ ] Regenerated `assets/architecture.svg` + `assets/term-*.svg` if the command flow changed (`python3 scripts/generate-architecture-svg.py && python3 scripts/generate-terminals.py`)
-- [ ] Stays in scope: a focused prompt-optimizer command, no scope creep
+- [ ] Stays in scope: a focused claude-prompt command, no scope creep
 
 ## Notes for the reviewer
 

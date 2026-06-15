@@ -1,5 +1,5 @@
 name: Bug report
-description: Report a defect in the prompt-optimizer plugin or its /p command
+description: Report a defect in the claude-prompt plugin or its /p command
 labels: ["bug"]
 body:
   - type: markdown
@@ -11,7 +11,7 @@ body:
   - type: input
     id: version
     attributes:
-      label: prompt-optimizer version
+      label: claude-prompt version
       description: The installed plugin version (see `.claude-plugin/plugin.json`).
       placeholder: "0.1.0"
     validations:

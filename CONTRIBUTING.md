@@ -1,6 +1,6 @@
-# Contributing to prompt-optimizer
+# Contributing to claude-prompt
 
-Thanks for your interest. prompt-optimizer is deliberately tiny — one slash command
+Thanks for your interest. claude-prompt is deliberately tiny — one slash command
 that rewrites a request, then runs it. Contributions that keep it small and focused
 are very welcome.
 
@@ -42,15 +42,15 @@ python3 scripts/generate-terminals.py          # writes assets/term-*.svg (READM
 Point Claude Code at your working copy:
 
 ```
-/plugin marketplace add /path/to/your/clone/prompt-optimizer
-/plugin install prompt-optimizer@prompt-optimizer
+/plugin marketplace add /path/to/your/clone/claude-prompt
+/plugin install claude-prompt@claude-prompt
 ```
 
 Then run `/p <something>` and confirm the two-part (optimize → execute) behavior.
 
 ## Scope
 
-prompt-optimizer does one thing. Please don't grow it into a general prompt toolkit,
+claude-prompt does one thing. Please don't grow it into a general prompt toolkit,
 add dependencies, or add hooks/scripts that run code on the user's machine — the
 plugin's value is that it's a single, auditable, code-free command. See the README's
 intro for the boundary.
