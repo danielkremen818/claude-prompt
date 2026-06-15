@@ -1,18 +1,18 @@
 # Publishing
 
-prompt-optimizer is distributed as a Claude Code plugin straight from this GitHub repo
+claude-prompt is distributed as a Claude Code plugin straight from this GitHub repo
 — there is no npm package and no registry to push to. "Publishing" means the repo is
 public and the marketplace manifest resolves.
 
 ## How users install
 
 ```text
-/plugin marketplace add danielkremen818/prompt-optimizer
-/plugin install prompt-optimizer@prompt-optimizer
+/plugin marketplace add danielkremen818/claude-prompt
+/plugin install claude-prompt@claude-prompt
 ```
 
 Claude Code reads `.claude-plugin/marketplace.json` from the default branch, finds the
-`prompt-optimizer` plugin (`"source": "./"`), and installs the command from
+`claude-prompt` plugin (`"source": "./"`), and installs the command from
 `commands/p.md`.
 
 ## Cutting a new version

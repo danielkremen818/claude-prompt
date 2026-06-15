@@ -2,7 +2,7 @@
 """
 Render polished "mac-window" terminal SVGs of a /p session for the README.
 
-prompt-optimizer has no CLI to capture (the product is a prompt, not a program), so the
+claude-prompt has no CLI to capture (the product is a prompt, not a program), so the
 panels below are authored content — a faithful mock of what a `/p` run looks like in
 Claude Code. The window chrome (gradient frame, traffic lights, titlebar, glow) mirrors
 the terminal images in the author's ultracost project, retinted to the warm clay/amber
@@ -87,7 +87,7 @@ def build_svg(title: str, lines: list[list[dict]]) -> str:
         f'viewBox="0 0 {W} {H}" '
         f'font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, '
         f"'Liberation Mono', monospace\" "
-        f'role="img" aria-label="prompt-optimizer terminal: {esc(title)}">'
+        f'role="img" aria-label="claude-prompt terminal: {esc(title)}">'
     ]
     P.append(
         "<defs>"

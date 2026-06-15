@@ -1,4 +1,4 @@
-# Maintaining prompt-optimizer
+# Maintaining claude-prompt
 
 Maintainer-only runbook: how to cut a release and how to lock down the repository with
 branch/tag rulesets and the security toggles.
@@ -40,11 +40,11 @@ These use **repository Rulesets** (not the legacy "branch protection" UI) for la
 named, auditable rules.
 
 > **Prerequisite — the remote must exist first.** Every `gh` command below targets
-> `danielkremen818/prompt-optimizer`, so create and push the repo before running any
+> `danielkremen818/claude-prompt`, so create and push the repo before running any
 > of them:
 >
 > ```bash
-> gh repo create danielkremen818/prompt-optimizer --source=. --public --remote=origin --push
+> gh repo create danielkremen818/claude-prompt --source=. --public --remote=origin --push
 > ```
 
 ### 2a. `main` branch ruleset (strict solo)
@@ -55,7 +55,7 @@ force-push + deletion blocked. **No bypass actors** — applies to everyone, inc
 the owner.
 
 ```bash
-gh api --method POST repos/danielkremen818/prompt-optimizer/rulesets --input - <<'JSON'
+gh api --method POST repos/danielkremen818/claude-prompt/rulesets --input - <<'JSON'
 {
   "name": "main protection",
   "target": "branch",
@@ -100,7 +100,7 @@ Releases are tag-driven, so tags are privileged. This restricts who can create o
 delete `v*` tags to the **Admin** role (the owner).
 
 ```bash
-gh api --method POST repos/danielkremen818/prompt-optimizer/rulesets --input - <<'JSON'
+gh api --method POST repos/danielkremen818/claude-prompt/rulesets --input - <<'JSON'
 {
   "name": "version tags",
   "target": "tag",
@@ -129,11 +129,11 @@ Run these once after the remote exists (each is idempotent):
 
 ```bash
 # Dependabot alerts (prerequisite) + automated security updates
-gh api --method PUT repos/danielkremen818/prompt-optimizer/vulnerability-alerts
-gh api --method PUT repos/danielkremen818/prompt-optimizer/automated-security-fixes
+gh api --method PUT repos/danielkremen818/claude-prompt/vulnerability-alerts
+gh api --method PUT repos/danielkremen818/claude-prompt/automated-security-fixes
 
 # Secret scanning + push protection
-gh api --method PATCH repos/danielkremen818/prompt-optimizer --input - <<'JSON'
+gh api --method PATCH repos/danielkremen818/claude-prompt --input - <<'JSON'
 {
   "security_and_analysis": {
     "secret_scanning": { "status": "enabled" },
@@ -143,7 +143,7 @@ gh api --method PATCH repos/danielkremen818/prompt-optimizer --input - <<'JSON'
 JSON
 
 # GitHub Actions: require approval to run workflows for ALL outside collaborators
-gh api --method PUT repos/danielkremen818/prompt-optimizer/actions/permissions/fork-pr-contributor-approval --input - <<'JSON'
+gh api --method PUT repos/danielkremen818/claude-prompt/actions/permissions/fork-pr-contributor-approval --input - <<'JSON'
 { "approval_policy": "all_external_contributors" }
 JSON
 ```

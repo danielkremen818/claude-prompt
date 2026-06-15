@@ -1,11 +1,11 @@
 name: Feature request
-description: Suggest an enhancement for prompt-optimizer
+description: Suggest an enhancement for claude-prompt
 labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
-        prompt-optimizer is intentionally small — one command that rewrites a request,
+        claude-prompt is intentionally small — one command that rewrites a request,
         then runs it. Requests that keep it focused are most likely to land.
   - type: textarea
     id: problem

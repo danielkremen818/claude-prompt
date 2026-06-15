@@ -62,7 +62,7 @@ W, H = 1500, 920
 
 
 def build_svg() -> str:
-    P = [svg_open(W, H, "prompt-optimizer architecture diagram")]
+    P = [svg_open(W, H, "claude-prompt architecture diagram")]
 
     P.append(
         defs(
@@ -77,7 +77,7 @@ def build_svg() -> str:
     )
 
     P.append(canvas(W, H))
-    P.append('<text x="40" y="50" class="h1">PROMPT-OPTIMIZER &#183; LIVE ARCHITECTURE</text>')
+    P.append('<text x="40" y="50" class="h1">CLAUDE-PROMPT &#183; LIVE ARCHITECTURE</text>')
     P.append(
         '<text x="40" y="76" class="legend">'
         "One command (commands/p.md) &#8594; rewrite your request with four techniques "
@@ -103,7 +103,7 @@ def build_svg() -> str:
     P.append(node(cx=LX, cy=340, glyph="command", label="commands/p.md",
                   sublabel="the /p definition", accent=CLAY))
     P.append(node(cx=LX, cy=480, glyph="zap", label="/plugin install",
-                  sublabel="prompt-optimizer", accent=AMBER))
+                  sublabel="claude-prompt", accent=AMBER))
 
     # The /p run (center column)
     CX = 590

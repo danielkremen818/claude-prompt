@@ -1,6 +1,6 @@
 name: CodeQL
 
-# prompt-optimizer ships no application code — the only executable surface is its
+# claude-prompt ships no application code — the only executable surface is its
 # GitHub Actions workflows. CodeQL's "actions" pack scans those workflows for
 # injection and supply-chain issues, which is exactly the threat surface here.
 

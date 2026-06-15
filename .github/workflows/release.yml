@@ -1,6 +1,6 @@
 name: Release
 
-# prompt-optimizer is distributed as a Claude Code plugin (installed from this repo
+# claude-prompt is distributed as a Claude Code plugin (installed from this repo
 # via the marketplace), not an npm package — so a release is simply a validated,
 # tagged GitHub Release. Users get the new version on their next `/plugin` update.
 

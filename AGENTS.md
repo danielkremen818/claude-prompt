@@ -1,13 +1,13 @@
 # AGENTS.md
 
-Onboarding for an AI agent (or human) working **on the prompt-optimizer repository**.
+Onboarding for an AI agent (or human) working **on the claude-prompt repository**.
 
-> This file is about *developing prompt-optimizer*. It is distinct from the `/p`
+> This file is about *developing claude-prompt*. It is distinct from the `/p`
 > command the plugin ships (`commands/p.md`), which is the product.
 
 ## Purpose
 
-prompt-optimizer ships a single Claude Code slash command, `/p`, that rewrites the
+claude-prompt ships a single Claude Code slash command, `/p`, that rewrites the
 user's request into an optimized prompt (structured context, specificity,
 meta-instructions for extended thinking, and skip-comments that preserve quoted text)
 and then immediately executes that optimized prompt.

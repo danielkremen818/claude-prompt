@@ -1,17 +1,17 @@
 <div align="center">
 
-# prompt-optimizer
+# claude-prompt
 
 **A Claude Code slash command that rewrites your request into a better prompt — then runs it.**
 
-[![CI](https://github.com/danielkremen818/prompt-optimizer/actions/workflows/ci.yml/badge.svg)](https://github.com/danielkremen818/prompt-optimizer/actions/workflows/ci.yml)
-[![CodeQL](https://github.com/danielkremen818/prompt-optimizer/actions/workflows/codeql.yml/badge.svg)](https://github.com/danielkremen818/prompt-optimizer/actions/workflows/codeql.yml)
-[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/danielkremen818/prompt-optimizer/badge)](https://scorecard.dev/viewer/?uri=github.com/danielkremen818/prompt-optimizer)
+[![CI](https://github.com/danielkremen818/claude-prompt/actions/workflows/ci.yml/badge.svg)](https://github.com/danielkremen818/claude-prompt/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/danielkremen818/claude-prompt/actions/workflows/codeql.yml/badge.svg)](https://github.com/danielkremen818/claude-prompt/actions/workflows/codeql.yml)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/danielkremen818/claude-prompt/badge)](https://scorecard.dev/viewer/?uri=github.com/danielkremen818/claude-prompt)
 [![dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)](#whats-in-the-box)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-plugin-d97757.svg)](https://code.claude.com/docs/en/plugins)
 
-<img src="https://raw.githubusercontent.com/danielkremen818/prompt-optimizer/main/assets/term-demo.svg" alt="A /p session: the typed request, the rewritten Optimized prompt, then Claude executing it" width="560">
+<img src="https://raw.githubusercontent.com/danielkremen818/claude-prompt/main/assets/term-demo.svg" alt="A /p session: the typed request, the rewritten Optimized prompt, then Claude executing it" width="560">
 
 </div>
 
@@ -37,8 +37,8 @@ No code. No dependencies. No network. No hooks. Just one auditable command. MIT.
 In Claude Code, add the marketplace and install the plugin:
 
 ```
-/plugin marketplace add danielkremen818/prompt-optimizer
-/plugin install prompt-optimizer@prompt-optimizer
+/plugin marketplace add danielkremen818/claude-prompt
+/plugin install claude-prompt@claude-prompt
 ```
 
 That's it — the `/p` command is now available in your session. To update later, bump
@@ -59,7 +59,7 @@ Run `/p` followed by whatever you'd normally ask:
 Claude responds in two parts — the rewritten prompt, then the work:
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/danielkremen818/prompt-optimizer/main/assets/term-demo.svg" alt="prompt-optimizer rewriting a request into a structured prompt, then executing it" width="560">
+<img src="https://raw.githubusercontent.com/danielkremen818/claude-prompt/main/assets/term-demo.svg" alt="claude-prompt rewriting a request into a structured prompt, then executing it" width="560">
 </div>
 
 ### Example: quoted text is never touched
@@ -74,7 +74,7 @@ error strings:
 The optimizer restructures the task but leaves `"Get started — it's free"` byte-for-byte:
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/danielkremen818/prompt-optimizer/main/assets/term-skip-comments.svg" alt="The skip-comments technique preserving a quoted call-to-action string verbatim" width="520">
+<img src="https://raw.githubusercontent.com/danielkremen818/claude-prompt/main/assets/term-skip-comments.svg" alt="The skip-comments technique preserving a quoted call-to-action string verbatim" width="520">
 </div>
 
 ### When to use it
@@ -91,7 +91,7 @@ One command file, two manifests, no runtime code. Your request flows through thr
 — optimize, show, execute — with the four techniques applied during the optimize step:
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/danielkremen818/prompt-optimizer/main/assets/architecture.svg" alt="prompt-optimizer architecture — install surface, the /p run, the four optimize techniques, and the output" width="900">
+<img src="https://raw.githubusercontent.com/danielkremen818/claude-prompt/main/assets/architecture.svg" alt="claude-prompt architecture — install surface, the /p run, the four optimize techniques, and the output" width="900">
 </div>
 
 Full write-up in [`docs/architecture.md`](docs/architecture.md).
@@ -105,11 +105,11 @@ Full write-up in [`docs/architecture.md`](docs/architecture.md).
 | `.claude-plugin/marketplace.json` | Marketplace metadata for one-line install. |
 | `scripts/` | The CI validator and the SVG diagram/terminal generators (dev-only). |
 
-The command is invoked as `/p` (or fully qualified, `/prompt-optimizer:p`).
+The command is invoked as `/p` (or fully qualified, `/claude-prompt:p`).
 
 ## Security
 
-prompt-optimizer ships **no code, no dependencies, and no hooks** — it cannot run
+claude-prompt ships **no code, no dependencies, and no hooks** — it cannot run
 anything on your machine, only add a `/p` command whose body is a prompt. CI pins every
 GitHub Action to a commit SHA, runs CodeQL (actions) and OpenSSF Scorecard, and fails
 the build if any tracked file leaks an email, token, or private path. See

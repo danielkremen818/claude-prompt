@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-svgkit — the shared, zero-dependency brand-SVG toolkit for prompt-optimizer's docs.
+svgkit — the shared, zero-dependency brand-SVG toolkit for claude-prompt's docs.
 
 Pure Python standard library (string building only — no XML/jinja/etc.) so it runs with
-`python3` and adds no dependencies. It is the single home for the prompt-optimizer visual
+`python3` and adds no dependencies. It is the single home for the claude-prompt visual
 language used by the generated architecture diagram:
 
   - the brand palette (warm clay/amber accents on an ink canvas — the "rewrite then run" feel)
