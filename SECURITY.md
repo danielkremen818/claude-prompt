@@ -28,13 +28,13 @@ is intentionally very little to vet.
 
 - **No code.** The plugin ships no JavaScript, no binary, no install script, and no
   hooks. It cannot execute anything on your machine on its own — it only adds a
-  `/p` command whose body is a prompt sent to Claude.
+  `/claude-prompt:p` command whose body is a prompt sent to Claude.
 - **No telemetry, no network.** Nothing is collected, logged off-machine, or phoned
   home. The plugin makes no network requests of its own.
 - **No dependencies.** There is no package manifest and no dependency tree, so there
   is no supply chain to compromise.
 - **Reads only what you pass it.** The command operates solely on the request text you
-  type after `/p`. It does not read your filesystem or environment.
+  type after `/claude-prompt:p`. It does not read your filesystem or environment.
 
 The only executable surface in this repository is its **GitHub Actions workflows**,
 which is why CodeQL (the `actions` pack) and OpenSSF Scorecard run in CI.

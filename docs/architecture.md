@@ -13,10 +13,11 @@ two manifests, and the packaging/CI around them. There is no runtime code.
 
 **Install surface.** The marketplace reads `.claude-plugin/marketplace.json`, which
 points at this repo as a plugin. `.claude-plugin/plugin.json` is the manifest, and
-`commands/p.md` is the command body. Installing the plugin makes `/p` (fully qualified
-`/claude-prompt:p`) available in the session.
+`commands/p.md` is the command body. Installing the plugin makes `/claude-prompt:p`
+available in the session — Claude Code namespaces every plugin command, so the bare `/p`
+is reserved for personal/project commands (see the README's *Shorten to `/p`*).
 
-**The `/p` run.** When you type `/p <request>`, Claude Code substitutes your text for
+**The `/claude-prompt:p` run.** When you type `/claude-prompt:p <request>`, Claude Code substitutes your text for
 `$ARGUMENTS` in `commands/p.md` and runs the resulting prompt. That prompt puts Claude
 into "PROMPT OPTIMIZER" mode:
 

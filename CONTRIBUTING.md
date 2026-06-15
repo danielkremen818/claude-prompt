@@ -46,7 +46,9 @@ Point Claude Code at your working copy:
 /plugin install claude-prompt@claude-prompt
 ```
 
-Then run `/p <something>` and confirm the two-part (optimize → execute) behavior.
+Then run `/claude-prompt:p <something>` (plugin commands are namespaced — the bare `/p`
+only works if you've aliased it, see the README's *Shorten to `/p`*) and confirm the
+two-part (optimize → execute) behavior.
 
 ## Scope
 
