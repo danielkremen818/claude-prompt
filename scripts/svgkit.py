@@ -89,6 +89,7 @@ GLYPHS = {
         '<polyline points="22 4 12 14.01 9 11.01"/>'
     ),
     "zap": '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>',
+    "filter": '<polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>',
 }
 
 
