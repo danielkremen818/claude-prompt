@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="334" viewBox="0 0 540 334" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" role="img" aria-label="prompt-optimizer terminal: claude — /p prompt optimizer">
+<defs><linearGradient id="frame" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d97757"/><stop offset="55%" stop-color="#fbbf24"/><stop offset="100%" stop-color="#f4b860"/></linearGradient><radialGradient id="glow" cx="22%" cy="0%" r="90%"><stop offset="0%" stop-color="#d97757" stop-opacity="0.16"/><stop offset="60%" stop-color="#d97757" stop-opacity="0"/></radialGradient><clipPath id="screen"><rect x="1.5" y="1.5" width="537" height="331" rx="11"/></clipPath></defs>
+<rect x="1" y="1" width="538" height="332" rx="11.5" fill="#100a07" stroke="url(#frame)" stroke-width="1.5"/>
+<g clip-path="url(#screen)">
+<rect x="0" y="0" width="540" height="334" fill="url(#glow)"/>
+<rect x="1.5" y="1.5" width="537" height="36" rx="11" fill="#1c1410"/>
+<rect x="1.5" y="28" width="537" height="10" fill="#1c1410"/>
+<line x1="0" y1="37.5" x2="540" y2="37.5" stroke="#000" stroke-opacity="0.35"/>
+<circle cx="24" cy="19.0" r="5.5" fill="#fb7185"/>
+<circle cx="44" cy="19.0" r="5.5" fill="#fbbf24"/>
+<circle cx="64" cy="19.0" r="5.5" fill="#34d399"/>
+<text x="270.0" y="23.0" text-anchor="middle" font-size="11" fill="#c4a78f" letter-spacing="0.04em">claude — /p prompt optimizer</text>
+<text font-size="13" xml:space="preserve">
+<tspan x="22" y="65"><tspan fill="#34d399" font-weight="700">&gt; </tspan><tspan fill="#f4b860">/p add rate limiting to the login endpoint</tspan></tspan>
+<tspan x="22" y="84"> </tspan>
+<tspan x="22" y="103"><tspan fill="#f4b860" font-weight="700">Optimized prompt:</tspan></tspan>
+<tspan x="22" y="122"><tspan fill="#e7d8c9">Add rate limiting to the </tspan><tspan fill="#22d3ee">POST /login</tspan><tspan fill="#e7d8c9"> endpoint.</tspan></tspan>
+<tspan x="22" y="141"><tspan fill="#22d3ee">1. </tspan><tspan fill="#e7d8c9">Pick a strategy (fixed-window vs token-bucket); justify it.</tspan></tspan>
+<tspan x="22" y="160"><tspan fill="#22d3ee">2. </tspan><tspan fill="#e7d8c9">Write a failing test: 6 hits / 60s -&gt; 429.  </tspan><tspan fill="#2dd4bf">verify:</tspan><tspan fill="#e7d8c9"> red</tspan></tspan>
+<tspan x="22" y="179"><tspan fill="#22d3ee">3. </tspan><tspan fill="#e7d8c9">Add middleware so the test passes.          </tspan><tspan fill="#2dd4bf">verify:</tspan><tspan fill="#e7d8c9"> green</tspan></tspan>
+<tspan x="22" y="198"><tspan fill="#22d3ee">4. </tspan><tspan fill="#e7d8c9">Return Retry-After; log throttled attempts.</tspan></tspan>
+<tspan x="22" y="217"><tspan fill="#8c7257">Success: </tspan><tspan fill="#e7d8c9" opacity="0.62">brute force capped, valid logins unaffected.</tspan></tspan>
+<tspan x="22" y="236"> </tspan>
+<tspan x="22" y="255"><tspan fill="#d97757">●</tspan><tspan fill="#d97757"> Executing the optimized prompt…</tspan></tspan>
+<tspan x="22" y="274"><tspan fill="#34d399">✓ </tspan><tspan fill="#e7d8c9">tests/login.rate.test.ts</tspan><tspan fill="#e7d8c9" opacity="0.62">   6/min -&gt; 429</tspan></tspan>
+<tspan x="22" y="293"><tspan fill="#34d399">✓ </tspan><tspan fill="#e7d8c9">middleware/rateLimit.ts</tspan><tspan fill="#e7d8c9" opacity="0.62">    token-bucket</tspan></tspan>
+<tspan x="22" y="312"><tspan fill="#34d399">✓ </tspan><tspan fill="#e7d8c9" font-weight="700">12 passed</tspan><tspan fill="#e7d8c9" opacity="0.62">   valid login flow unchanged</tspan></tspan>
+</text></g></svg>

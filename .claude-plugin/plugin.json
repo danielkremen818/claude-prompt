@@ -1,13 +1,19 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "prompt-optimizer",
+  "displayName": "Prompt Optimizer",
   "version": "0.1.0",
   "description": "A Claude Code slash command that rewrites your request into an optimized, reasoning-maximizing prompt — then immediately carries it out. Ships the /p (prompt-optimizer:p) command: structured context, specificity, meta-instructions for extended thinking, and skip-comments that preserve any text inside double quotes.",
   "author": {
-    "name": "Daniel Kremen"
+    "name": "Daniel Kremen",
+    "url": "https://github.com/danielkremen818"
   },
   "homepage": "https://github.com/danielkremen818/prompt-optimizer#readme",
   "repository": "https://github.com/danielkremen818/prompt-optimizer",
   "license": "MIT",
+  "commands": [
+    "./commands/p.md"
+  ],
   "keywords": [
     "claude-code",
     "claude-code-plugin",

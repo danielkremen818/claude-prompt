@@ -21,7 +21,9 @@ commands/p.md                          the /p command — the whole product
 scripts/validate-plugin.sh             green-bar check: manifests + command + leak scan
 scripts/svgkit.py                      zero-dependency SVG toolkit (palette, nodes, flows)
 scripts/generate-architecture-svg.py   regenerates assets/architecture.svg from svgkit
+scripts/generate-terminals.py          regenerates assets/term-*.svg (README screenshots)
 assets/architecture.svg                generated diagram (do not hand-edit)
+assets/term-*.svg                      generated terminal "screenshots" (do not hand-edit)
 docs/architecture.md                   how the command flows, embeds the diagram
 docs/PUBLISHING.md                     how to publish/update the plugin
 .github/workflows/                     ci (validate), codeql (actions), scorecard, release
