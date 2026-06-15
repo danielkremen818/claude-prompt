@@ -12,8 +12,8 @@ Hand-crafted (not mermaid) so we get a living system map:
 
 What it depicts (precise to the actual plugin):
   - the INSTALL SURFACE: the two manifests in .claude-plugin/ + commands/p.md, installed
-    via the marketplace into a live /p command
-  - the /p RUN: your request ($ARGUMENTS) -> Step 1 Optimize -> Step 2 Show -> Step 3 Execute
+    via the marketplace into a live /claude-prompt:p command
+  - the /claude-prompt:p RUN: your request ($ARGUMENTS) -> Step 1 Optimize -> Step 2 Show -> Step 3 Execute
   - the four OPTIMIZE techniques applied during Step 1 (structured context, specificity,
     meta-instructions, skip-comments) feeding the optimize step
   - the OUTPUT: the shown "Optimized prompt:" block, then the executed result
@@ -88,7 +88,7 @@ def build_svg() -> str:
     # ── subsystem boxes ───────────────────────────────────────────────
     P.append(subsystem_box(x=40, y=110, w=300, h=560, title="Install surface · the plugin",
                            fill_id="bg-install", stroke="#b08968"))
-    P.append(subsystem_box(x=380, y=110, w=420, h=700, title="PROMPT OPTIMIZER mode · /p",
+    P.append(subsystem_box(x=380, y=110, w=420, h=700, title="PROMPT OPTIMIZER mode · /claude-prompt:p",
                            fill_id="bg-run", stroke=CLAY))
     P.append(subsystem_box(x=840, y=110, w=620, h=300, title="Step 1 · optimize with 4 techniques",
                            fill_id="bg-tech", stroke=AMBER))
@@ -98,24 +98,24 @@ def build_svg() -> str:
     # ── nodes ──────────────────────────────────────────────────────────
     # Install surface (left column)
     LX = 190
-    P.append(node(cx=LX, cy=200, glyph="package", label=".claude-plugin/",
+    P.append(node(cx=LX, cy=200, glyph="package", label=".claude-plugin/", w=270,
                   sublabel="plugin.json · marketplace.json", accent=SLATE))
-    P.append(node(cx=LX, cy=340, glyph="command", label="commands/p.md",
-                  sublabel="the /p definition", accent=CLAY))
-    P.append(node(cx=LX, cy=480, glyph="zap", label="/plugin install",
+    P.append(node(cx=LX, cy=340, glyph="command", label="commands/p.md", w=270,
+                  sublabel="the /claude-prompt:p definition", accent=CLAY))
+    P.append(node(cx=LX, cy=480, glyph="zap", label="/plugin install", w=270,
                   sublabel="claude-prompt", accent=AMBER))
 
-    # The /p run (center column)
+    # The /claude-prompt:p run (center column)
     CX = 590
-    P.append(node(cx=CX, cy=185, glyph="user", label="your request", w=240,
-                  sublabel="/p [--dry] <request>", accent=INK))
-    P.append(node(cx=CX, cy=315, glyph="filter", label="Step 0 · Read", w=240,
+    P.append(node(cx=CX, cy=185, glyph="user", label="your request", w=300,
+                  sublabel="/claude-prompt:p [--dry] <request>", accent=INK))
+    P.append(node(cx=CX, cy=315, glyph="filter", label="Step 0 · Read", w=300,
                   sublabel="type · clarity · stakes", accent=PINK))
-    P.append(node(cx=CX, cy=445, glyph="edit", label="Step 1 · Optimize", w=240,
+    P.append(node(cx=CX, cy=445, glyph="edit", label="Step 1 · Optimize", w=300,
                   sublabel="rewrite for reasoning", accent=AMBER))
-    P.append(node(cx=CX, cy=575, glyph="eye", label="Step 2 · Show", w=240,
+    P.append(node(cx=CX, cy=575, glyph="eye", label="Step 2 · Show", w=300,
                   sublabel="Optimized prompt:", accent=GOLD))
-    P.append(node(cx=CX, cy=705, glyph="play", label="Step 3 · Execute", w=240,
+    P.append(node(cx=CX, cy=705, glyph="play", label="Step 3 · Execute", w=300,
                   sublabel="clear asks run one-shot", accent=CLAY))
 
     # The four techniques (right-top)
@@ -139,8 +139,8 @@ def build_svg() -> str:
     P.append(flow(d="M 190 244 L 190 310", color=SLATE, label="ships", label_pos=(190, 280), dur="2.4s"))
     P.append(flow(d="M 190 384 L 190 450", color=CLAY, label="install", label_pos=(190, 420), dur="2.2s"))
     # install -> /p available (enables the run)
-    P.append(flow(d=curve(300, 470, 470, 190, 0.55), color=AMBER,
-                  label="enables /p", label_pos=(388, 300), dur="2.8s"))
+    P.append(flow(d=curve(325, 470, 440, 190, 0.55), color=AMBER,
+                  label="enables", label_pos=(384, 300), dur="2.8s"))
 
     # center vertical chain
     P.append(flow(d="M 590 229 L 590 285", color=INK, label="read", label_pos=(590, 257), dur="2.0s"))
@@ -148,19 +148,19 @@ def build_svg() -> str:
     P.append(flow(d="M 590 489 L 590 545", color=AMBER, label="rewrite", label_pos=(590, 517), dur="2.0s"))
     P.append(flow(d="M 590 619 L 590 675", color=GOLD, label="then run", label_pos=(590, 647), dur="2.0s"))
     # Step 0 gate — clarify/confirm loops back to the user only when warranted
-    P.append(flow(d="M 470 315 C 432 280, 432 220, 470 185", color=PINK,
-                  label="clarify / confirm", label_pos=(432, 250), dur="2.6s"))
+    P.append(flow(d="M 440 315 C 402 280, 402 220, 440 185", color=PINK,
+                  label="clarify / confirm", label_pos=(402, 250), dur="2.6s"))
 
     # the four techniques feed Step 1 Optimize (converge on the optimize node, x=710)
-    P.append(flow(d=curve(850, 200, 712, 435, 0.5), color=CYAN, label="applied", label_pos=(800, 300), dur="2.6s"))
-    P.append(flow(d=curve(850, 320, 712, 447, 0.5), color=VIOLET, dur="2.4s"))
-    P.append(flow(d=curve(1165, 210, 716, 441, 0.7), color=TEAL, dur="3.0s"))
-    P.append(flow(d=curve(1165, 330, 716, 453, 0.7), color=PINK, dur="3.2s"))
+    P.append(flow(d=curve(850, 200, 742, 435, 0.5), color=CYAN, label="applied", label_pos=(800, 300), dur="2.6s"))
+    P.append(flow(d=curve(850, 320, 742, 447, 0.5), color=VIOLET, dur="2.4s"))
+    P.append(flow(d=curve(1165, 210, 746, 441, 0.7), color=TEAL, dur="3.0s"))
+    P.append(flow(d=curve(1165, 330, 746, 453, 0.7), color=PINK, dur="3.2s"))
 
     # Step 2 Show -> optimized prompt block
-    P.append(flow(d=curve(710, 575, 850, 558, 0.5), color=GOLD, label="reveal", label_pos=(782, 552), dur="2.2s"))
+    P.append(flow(d=curve(740, 575, 850, 558, 0.5), color=GOLD, label="reveal", label_pos=(795, 552), dur="2.2s"))
     # Step 3 Execute -> the result
-    P.append(flow(d="M 710 705 C 980 705, 1180 660, 1290 600", color=CLAY,
+    P.append(flow(d="M 740 705 C 980 705, 1180 660, 1290 600", color=CLAY,
                   label="carry out", label_pos=(1010, 706), dur="2.8s"))
     # optimized prompt -> result (the same optimized prompt is what gets executed)
     P.append(flow(d="M 1120 560 L 1166 560", color=GREEN, dur="2.0s"))
